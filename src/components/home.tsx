@@ -28,7 +28,7 @@ function Home(): JSX.Element {
   const [searchKeyword, setSearch] = useState('');
 
   const { isLoading, error, data } = useQuery(
-    ['HEADLINES_LIST', category],
+    ['HEADLINES_LIST', category, searchKeyword],
     () =>
       axios
         .get('https://newsapi.org/v2/top-headlines', {
